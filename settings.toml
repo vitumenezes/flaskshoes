@@ -1,0 +1,8 @@
+[default]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
+TITLE = "Flaskshoes"
+SECRET_KEY = "vaonreigig-mhimrganwspnregpmrvRsjjthjerhr"
+SQLALCHEMY_TRACK_MODIFICATIONS="false"
+
+[production]
+SQLALCHEMY_DATABASE_URL = '...'
