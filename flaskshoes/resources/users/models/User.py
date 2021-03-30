@@ -14,5 +14,11 @@ class User(db.Model):
         self.email = email
         self.password = password
 
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'name', self.name
+        yield 'email', self.email
+        yield 'password', self.password
+
     def __repr__(self):
         return '<User %r>' % self.name
