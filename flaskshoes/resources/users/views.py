@@ -12,8 +12,10 @@ parser.add_argument('password', required=True, type=str)
 
 
 class UserResource(Resource):
-    def get(self):
-        return {'status': 200}
+    def get(self, userid):
+        user = dict(User.query.filter_by(id=userid).first_or_404())
+        del user['password']
+        return dict(user)
 
     def post(self):
         args = parser.parse_args()
