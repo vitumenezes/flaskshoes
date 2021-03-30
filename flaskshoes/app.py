@@ -1,8 +1,9 @@
 from flask import Flask
+
 from flaskshoes.ext import configuration
 from flaskshoes.ext import database
 
-from flaskshoes.blueprints.users import views
+from flaskshoes.resources.users import user_bp
 
 
 def create_app():
@@ -11,6 +12,6 @@ def create_app():
     configuration.init_app(app)
     database.init_app(app)
 
-    views.init_app(app)
+    app.register_blueprint(user_bp)
 
     return app
